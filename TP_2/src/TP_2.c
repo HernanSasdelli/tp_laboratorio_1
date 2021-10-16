@@ -28,7 +28,7 @@ int modificacionEmpleado(Employee* pArray, int LARGO);
 int main(void)
 {
 	setbuf(stdout, NULL);
-	Employee eEmpleados[CANT_EMPLEADOS];/*= {{1000,"Maria","Ladelbarrio",5000,1,1}, {1001,"Juan Carlos","que haces",4000,4,1}, {1005,"que haces","Juan Carlos",3000,4,1},{1003,"que haces","Juan Carlos",500,4,1}, {1006,"que haces","chupapija",4000,4,1}};*/
+	Employee eEmpleados[CANT_EMPLEADOS];
 	int opcion;
 	char respuesta;
 	int controlEmpleado;

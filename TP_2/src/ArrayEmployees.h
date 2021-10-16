@@ -35,10 +35,6 @@ void mostrarUnaPosicion(Employee* list,int posicion);
 int modificacionEmpleado(Employee* pArray, int LARGO);
 int bajaEmpleado(Employee* list, int len);
 
-//revisar
-void OrdenarPorPuesto(Employee lista[], int largo);
-void MostrarPorPuesto(Employee lista[], int largo, char puesto[]);
-
 
 
 #endif /* ARRAYEMPLOYEES_H_ */
