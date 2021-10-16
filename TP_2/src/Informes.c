@@ -75,7 +75,7 @@ void informesPromedio(Employee* list, int LARGO)
 		{
 			for(i=0;i<LARGO;i++)
 			{
-				if(list[i].salary>prom)
+				if(list[i].salary>prom&&list[i].isEmpty==OCUPADO)
 				{
 					contadorAuxSup++;
 				}
@@ -85,9 +85,9 @@ void informesPromedio(Employee* list, int LARGO)
 			printf("Cantidad de empleados que superan el promedio de sueldos: %d \nLista:\n",contadorAuxSup);
 			for(i=0;i<LARGO;i++)
 			{
-				if(list[i].salary>prom)
+				if(list[i].salary>prom&&list[i].isEmpty==OCUPADO)
 				{
-					printf("%s %s\n",list[i].lastName,list[i].name);
+					printf(" %s %s\n",list[i].lastName,list[i].name);
 				}
 			}
 		}
