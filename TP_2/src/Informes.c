@@ -115,7 +115,7 @@ int sortEmployees(Employee* list, int len, int order)
 	int i;
 	int h;
 	Employee listaAux;
-	if(list!=NULL&&len>0&&(order==1||order==2))
+	if(list!=NULL&&len>0 && (order==1||order==2))
 	{
 		switch(order)
 		{
@@ -124,14 +124,24 @@ int sortEmployees(Employee* list, int len, int order)
 				{
 					for (h=i+1;h<len;h++)
 					{
-						 if(list[i].isEmpty==OCUPADO && list[h].isEmpty==OCUPADO)//me fijo que esten cargados en uso
+						 if(list[i].isEmpty==OCUPADO && list[h].isEmpty==OCUPADO)
 						 {
-							if(list[i].sector < list[h].sector || (list[i].sector==list[h].sector && (strcmp(list[i].lastName, list[h].lastName)) < 0)) //me perdi
+							if(strcmp(list[i].lastName, list[h].lastName) == 0)
+							{
+								if(list[i].sector > list[h].sector)
+								{
+									listaAux = list[i];
+									list[i] = list[h];
+									list[h] = listaAux;
+								}
+
+							 }
+							else if(strcmp(list[i].lastName, list[h].lastName) > 0)
 							{
 								listaAux = list[i];
 								list[i] = list[h];
 								list[h] = listaAux;
-							 }
+							}
 						 }
 					}
 				}
@@ -142,14 +152,23 @@ int sortEmployees(Employee* list, int len, int order)
 				{
 					for (h=i+1;h<len;h++)
 					{
-						 if(list[i].isEmpty==OCUPADO && list[h].isEmpty==OCUPADO)//me fijo que esten cargados en uso
+						 if(list[i].isEmpty==OCUPADO && list[h].isEmpty==OCUPADO)
 						 {
-							if(list[i].sector>list[h].sector || (list[i].sector==list[h].sector && (strcmp(list[i].lastName, list[h].lastName))>0)) //OJO con el signo, y dar vueltas las variables
-							{																														//mejot corregir enunciado
+							if(strcmp(list[i].lastName, list[h].lastName) == 0)
+							{
+								if(list[i].sector < list[h].sector)
+								{
+									listaAux = list[i];
+									list[i] = list[h];
+									list[h] = listaAux;
+								}
+							}
+							else if(strcmp(list[i].lastName, list[h].lastName) < 0)
+							{
 								listaAux = list[i];
 								list[i] = list[h];
 								list[h] = listaAux;
-							 }
+							}
 						 }
 					}
 				}
@@ -200,4 +219,11 @@ void imprimirListaOrdenada(Employee* list, int len)
 	}
 
 }
+
+/** \brief recibe los datos de usuarios necesarios para que funcione la funcion sortEmployees
+ * \param lista estructura
+ * \param int largo
+ */
+
+
 

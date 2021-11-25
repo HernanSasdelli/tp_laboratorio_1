@@ -169,9 +169,10 @@ int main(void)
 									printf("\nNo se pudo Continuar\n");
 									break;
 								}
+
 							}while(respuesta=='s'||respuesta=='S');
 						}
-						informesPromedio(eEmpleados,CANT_EMPLEADOS);
+
 					break;
 				}
 			}
